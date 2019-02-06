@@ -13,7 +13,7 @@ import MyVuetable from './components/MyVuetable'
 export default {
   name: 'app',
   components: {
-    MyVuetable
+    MyVuetable  //include MyVuetable 
   }
 }
 </script>
