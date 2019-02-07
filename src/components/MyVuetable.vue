@@ -70,10 +70,6 @@ export default {
   },
   data () {
     return {
-        // css: {
-        //   ascendingIcon: 'fas fa-arrow-alt-circle-up',
-        //   descendingIcon: 'glyphicon glyphicon-chevron-down'
-        // },
       fields: [
         {
           name: '__sequence',  
@@ -155,7 +151,9 @@ export default {
               direction: 'asc'
           }
       ],
-      moreParams: {}
+      moreParams: {
+          
+      }
     }
   },
   mounted() {
@@ -180,9 +178,6 @@ export default {
         : moment(value, 'YYYY-MM-DD').format(fmt)
     },
     onPaginationData (paginationData) {
-        // this.$refs.paginationTop.setPaginationData(paginationData)
-        // this.$refs.paginationInfoTop.setPaginationData(paginationData)
-
       this.$refs.pagination.setPaginationData(paginationData)
       this.$refs.paginationInfo.setPaginationData(paginationData)
     },
@@ -197,10 +192,14 @@ export default {
         this.$refs.vuetable.toggleDetailRow(data.id)
     },
     onFilterSet (filterText) {
-        console.log('filter-set', filterText)
+        this.moreParams = {
+            'filter': filterText
+        }
+        Vue.nextTick( () => this.$refs.vuetable.refresh())
     },
     onFilterReset () {
-        console.log('filter-reset')
+        this.moreParams = {}
+        Vue.nextTick( () => this.$refs.vuetable.refresh())
     }
   }
 }
