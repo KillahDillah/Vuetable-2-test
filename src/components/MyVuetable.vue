@@ -1,10 +1,14 @@
 // MyVuetable.vue
 
 <template>
-  <vuetable ref="vuetable"
-    api-url="https://vuetable.ratiw.net/api/users"
-    :fields="fields"
-  ></vuetable>
+    <div>
+        <vuetable ref="vuetable"
+            api-url="https://vuetable.ratiw.net/api/users"
+            :fields="fields"
+            pagination-path=""
+        ></vuetable>
+        <vuetable-pagination ref="pagination"></vuetable-pagination>
+    </div>
 </template>
 
 // fields must match json data
