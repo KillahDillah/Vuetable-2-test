@@ -17,8 +17,28 @@
             :per-page="30"
             :multi-sort="true"
             :sort-order="sortOrder"
+            detail-row-component="my-detail-row"
+            :appendParams="moreParams"
             @vuetable:pagination-data="onPaginationData"
-        ></vuetable>
+            @vuetable:cell-clicked="onCellClicked"
+        >
+            <template slot="actions" scope="props"> 
+                <div class="custom-actions">
+                    <button class="ui basic button"
+                    @click="onAction('view-item', props.rowData, props.rowIndex)">
+                    <i class="zoom icon"></i>
+                    </button>
+                    <button class="ui basic button"
+                    @click="onAction('edit-item', props.rowData, props.rowIndex)">
+                    <i class="edit icon"></i>
+                    </button>
+                    <button class="ui basic button"
+                    @click="onAction('delete-item', props.rowData, props.rowIndex)">
+                    <i class="delete icon"></i>
+                    </button>
+                </div>
+            </template>
+        </vuetable>
 
     </div>
 </template>
@@ -65,12 +85,6 @@ export default {
         //   dataClass: 'center aligned'
         // },
         {
-          name: '__component:custom-actions',   // append the name of the component you registered with Vue
-          title: 'Actions',
-          titleClass: 'center aligned',
-          dataClass: 'center aligned'
-        },
-        {
             name: 'name',
             sortField: 'name'
         },
@@ -114,6 +128,18 @@ export default {
             name: 'address.line1',
             sortField: 'address.line1',
             title: 'Address'
+        },
+        // {
+        //   name: '__component:custom-actions',   // append the name of the component you registered with Vue
+        //   title: 'Actions',
+        //   titleClass: 'center aligned',
+        //   dataClass: 'center aligned'
+        // },
+        {
+          name: '__slot:actions',  
+          title: 'Actions',
+          titleClass: 'center aligned',
+          dataClass: 'center aligned'
         }
       ],
       sortOrder: [
@@ -151,6 +177,9 @@ export default {
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
+    },
+    onAction (action, data, index) {
+      console.log('slot) action: ' + action, data.name, index)
     }
   }
 }
