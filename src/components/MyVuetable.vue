@@ -11,6 +11,7 @@
 
 <script>
 import Vuetable from 'vuetable-2/src/components/Vuetable'
+import accounting from 'accounting'
 
 export default {
   components: {
@@ -38,7 +39,8 @@ export default {
         {
             name: 'salary',
             titleClass: 'center aligned',
-            dataClass: 'center aligned'
+            dataClass: 'center aligned',
+            callback: 'formatNumber'
         },
         {
             name: 'address.line1',
@@ -53,8 +55,8 @@ export default {
     },
     genderLabel(value) {
         return value == 'M'
-        ? '<span class="label label-info"><i class="fas fa-star"></i> Male</span>'
-        : '<span class="label label-success"><i class="fas fa-heart"></i> Female</span>'
+        ? '<span class="ui teal label"><i class="large man icon m-0"></i>Male</span>'
+        : '<span class="ui pink label"><i class="large woman icon m-0"></i>Female</span>'
     }
   }
 }
