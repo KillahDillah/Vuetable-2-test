@@ -16,6 +16,7 @@
             pagination-path=""
             :per-page="30"
             :multi-sort="true"
+            :sort-order="sortOrder"
             @vuetable:pagination-data="onPaginationData"
         ></vuetable>
 
@@ -44,6 +45,12 @@ export default {
         //   descendingIcon: 'glyphicon glyphicon-chevron-down'
         // },
       fields: [
+        {
+          name: '__sequence',  
+          title: '#',
+          titleClass: 'center aligned',
+          dataClass: 'right aligned'
+        },
         {
             name: 'name',
             sortField: 'name'
@@ -89,6 +96,13 @@ export default {
             sortField: 'address.line1',
             title: 'Address'
         }
+      ],
+      sortOrder: [
+          {
+              field: 'email',
+              sortField: 'email',
+              direction: 'asc'
+          }
       ]
     }
   },
