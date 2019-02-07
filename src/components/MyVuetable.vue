@@ -27,6 +27,7 @@ export default {
         },
         {
             name: 'nickname',
+            callback: 'allcap'
         },
         {
             name: 'gender',
@@ -43,6 +44,11 @@ export default {
             title: 'Address'
         }
       ]
+    }
+  },
+  methods: {
+    allcap (value) {
+        return value.toUpperCase()
     }
   }
 }
