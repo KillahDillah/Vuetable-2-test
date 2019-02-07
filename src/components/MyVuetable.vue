@@ -46,7 +46,12 @@ export default {
         {
             name: 'email',
             sortField: 'email'
-        },     
+        },   
+        {
+            name: 'age',
+            sortField: 'birthdate',
+            dataClass: 'center aligned'
+        },  
         {
             name: 'birthdate',
             sortField: 'birthdate',
@@ -101,10 +106,10 @@ export default {
     },
     onPaginationData (paginationData) {
         this.$refs.paginationTop.setPaginationData(paginationData)
-      this.$refs.paginationInfoTop.setPaginationData(paginationData)
+        this.$refs.paginationInfoTop.setPaginationData(paginationData)
 
-      this.$refs.pagination.setPaginationData(paginationData)
-      this.$refs.paginationInfo.setPaginationData(paginationData)
+    //   this.$refs.pagination.setPaginationData(paginationData)
+    //   this.$refs.paginationInfo.setPaginationData(paginationData)
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
