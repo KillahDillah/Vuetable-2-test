@@ -13,10 +13,12 @@
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import accounting from 'accounting'
 import moment from 'moment'
+import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 
 export default {
   components: {
-    Vuetable
+    Vuetable,
+    VuetablePagination
   },
   data () {
     return {
