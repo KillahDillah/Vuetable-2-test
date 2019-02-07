@@ -39,6 +39,10 @@ export default {
   },
   data () {
     return {
+        // css: {
+        //   ascendingIcon: 'fas fa-arrow-alt-circle-up',
+        //   descendingIcon: 'glyphicon glyphicon-chevron-down'
+        // },
       fields: [
         {
             name: 'name',
