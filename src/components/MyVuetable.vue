@@ -45,21 +45,21 @@ export default {
         //   descendingIcon: 'glyphicon glyphicon-chevron-down'
         // },
       fields: [
-        // {
-        //   name: '__sequence',  
-        //   title: '#',
-        //   titleClass: 'center aligned',
-        //   dataClass: 'right aligned'
-        // },
+        {
+          name: '__sequence',  
+          title: '#',
+          titleClass: 'center aligned',
+          dataClass: 'right aligned'
+        },
         // {
         //   name: '__handle', 
         //   dataClass: 'center aligned'
         // },
-        {
-          name: '__checkbox',   // <----
-          titleClass: 'center aligned',
-          dataClass: 'center aligned'
-        },
+        // {
+        //   name: '__checkbox', 
+        //   titleClass: 'center aligned',
+        //   dataClass: 'center aligned'
+        // },
         {
             name: 'name',
             sortField: 'name'
