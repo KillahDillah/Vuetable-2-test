@@ -53,7 +53,9 @@ import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 import CustomActions from './CustomActions'
 import Vue from 'vue'
+import DetailRow from './DetailRow'
 
+Vue.component('my-detail-row', DetailRow)
 Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
 
 export default {
