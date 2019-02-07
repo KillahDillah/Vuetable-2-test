@@ -8,9 +8,14 @@
             pagination-path=""
             @vuetable:pagination-data="onPaginationData"
         ></vuetable>
-        <vuetable-pagination ref="pagination"
-        @vuetable-pagination:change-page="onChangePage"
-        ></vuetable-pagination>
+        <div class="vutable-pagination ui basic segment grid">
+            <vuetable-pagination-info ref="paginationInfo"
+            ></vuetable-pagination-info>
+
+            <vuetable-pagination ref="pagination"
+            @vuetable-pagination:change-page="onChangePage"
+            ></vuetable-pagination>
+        </div>
     </div>
 </template>
 
@@ -21,11 +26,13 @@ import Vuetable from 'vuetable-2/src/components/Vuetable'
 import accounting from 'accounting'
 import moment from 'moment'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePaginationDropdown'
+import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 
 export default {
   components: {
     Vuetable,
-    VuetablePagination
+    VuetablePagination,
+    VuetablePaginationInfo
   },
   data () {
     return {
