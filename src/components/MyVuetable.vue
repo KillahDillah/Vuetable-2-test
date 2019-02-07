@@ -60,7 +60,8 @@ export default {
             name: 'salary',
             titleClass: 'center aligned',
             dataClass: 'center aligned',
-            callback: 'formatNumber'
+            callback: 'formatNumber',
+            visible: false
         },
         {
             name: 'address.line1',
