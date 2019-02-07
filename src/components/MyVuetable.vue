@@ -12,6 +12,7 @@
 <script>
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import accounting from 'accounting'
+import moment from 'moment'
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
             name: 'birthdate',
             titleClass: 'center aligned',
             dataClass: 'center aligned',
+            callback: 'formatDate|MM-DD-YYYY'
         },
         {
             name: 'nickname',
@@ -58,9 +60,20 @@ export default {
     },
     genderLabel(value) {
         return value == 'M'
-        ? '<span class="ui teal label"><i class="large man icon m-0"></i>Male</span>'
-        : '<span class="ui pink label"><i class="large woman icon m-0"></i>Female</span>'
+        ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
+        : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
+    },
+    formatDate(value, fmt = 'M D YYYY') {
+        return (value == null)
+        ? ''
+        : moment(value, 'YYYY-MM-DD').format(fmt)
     }
   }
 }
 </script>
+
+<style>
+td {
+    white-space: nowrap;
+}
+</style>
