@@ -76,6 +76,12 @@ export default {
         return (value == null)
         ? ''
         : moment(value, 'YYYY-MM-DD').format(fmt)
+    },
+    onPaginationData (paginationData) {
+      this.$refs.pagination.setPaginationData(paginationData)
+    },
+    onChangePage (page) {
+      this.$refs.vuetable.changePage(page)
     }
   }
 }
