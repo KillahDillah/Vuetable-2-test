@@ -53,8 +53,8 @@ export default {
     },
     genderLabel(value) {
         return value == 'M'
-        ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
-        : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
+        ? '<span class="label label-info"><i class="fas fa-star"></i> Male</span>'
+        : '<span class="label label-success"><i class="fas fa-heart"></i> Female</span>'
     }
   }
 }
