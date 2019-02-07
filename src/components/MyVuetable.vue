@@ -86,6 +86,7 @@ export default {
     },
     onPaginationData (paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
+      this.$refs.paginationInfo.setPaginationData(paginationData)
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
