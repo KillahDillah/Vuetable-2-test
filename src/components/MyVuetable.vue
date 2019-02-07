@@ -6,6 +6,7 @@
             api-url="https://vuetable.ratiw.net/api/users"
             :fields="fields"
             pagination-path=""
+            @vuetable:pagination-data="onPaginationData"
         ></vuetable>
         <vuetable-pagination ref="pagination"></vuetable-pagination>
     </div>
