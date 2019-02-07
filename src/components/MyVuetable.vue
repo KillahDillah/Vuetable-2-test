@@ -182,7 +182,11 @@ export default {
     },
     onAction (action, data, index) {
       console.log('slot) action: ' + action, data.name, index)
-    }
+    },
+    onCellClicked (data, field, event) {
+        console.log('cellClicked: ', field.name)
+        this.$refs.vuetable.toggleDetailRow(data.id)
+      }
   }
 }
 </script>
