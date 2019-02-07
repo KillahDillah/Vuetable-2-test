@@ -23,7 +23,7 @@ export default {
         {
             name: 'birthdate',
             titleClass: 'center aligned',
-            dataClass: 'center aligned'
+            dataClass: 'center aligned',
         },
         {
             name: 'nickname',
@@ -32,7 +32,8 @@ export default {
         {
             name: 'gender',
             titleClass: 'center aligned',
-            dataClass: 'center aligned'
+            dataClass: 'center aligned',
+            callback: 'genderLabel'
         },
         {
             name: 'salary',
@@ -49,6 +50,11 @@ export default {
   methods: {
     allcap (value) {
         return value.toUpperCase()
+    },
+    genderLabel(value) {
+        return value == 'M'
+        ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
+        : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
     }
   }
 }
