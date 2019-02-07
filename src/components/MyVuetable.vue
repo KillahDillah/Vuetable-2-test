@@ -22,15 +22,21 @@ export default {
         'name', 'email',
         {
             name: 'birthdate',
+            titleClass: 'center aligned',
+            dataClass: 'center aligned'
         },
         {
             name: 'nickname',
         },
         {
             name: 'gender',
+            titleClass: 'center aligned',
+            dataClass: 'center aligned'
         },
         {
-            name: 'salary'
+            name: 'salary',
+            titleClass: 'center aligned',
+            dataClass: 'center aligned'
         },
         {
             name: 'address.line1',
