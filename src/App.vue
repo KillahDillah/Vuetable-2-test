@@ -11,7 +11,7 @@
 import MyVuetable from './components/MyVuetable'
 
 export default {
-  name: 'app',
+  name: 'app',  //renders on index page inside id tag
   components: {
     MyVuetable  //include MyVuetable 
   }
