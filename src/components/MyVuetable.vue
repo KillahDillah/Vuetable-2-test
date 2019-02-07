@@ -56,6 +56,7 @@ import Vue from 'vue'
 import DetailRow from './DetailRow'
 import FilterBar from './FilterBar'
 import VueEvents from 'vue-events'
+import FieldDefs from './FieldDefs.js'
 
 Vue.use(VueEvents)
 Vue.component('filter-bar', FilterBar)
@@ -70,80 +71,7 @@ export default {
   },
   data () {
     return {
-      fields: [
-        {
-          name: '__sequence',  
-          title: '#',
-          titleClass: 'center aligned',
-          dataClass: 'right aligned'
-        },
-        // {
-        //   name: '__handle', 
-        //   dataClass: 'center aligned'
-        // },
-        // {
-        //   name: '__checkbox', 
-        //   titleClass: 'center aligned',
-        //   dataClass: 'center aligned'
-        // },
-        {
-            name: 'name',
-            sortField: 'name'
-        },
-        {
-            name: 'email',
-            sortField: 'email'
-        },   
-        {
-            name: 'age',
-            sortField: 'birthdate',
-            dataClass: 'center aligned'
-        },  
-        {
-            name: 'birthdate',
-            sortField: 'birthdate',
-            titleClass: 'center aligned',
-            dataClass: 'center aligned',
-            callback: 'formatDate|MM-DD-YYYY'
-        },
-        {
-            name: 'nickname',
-            sortField: 'nickname',
-            callback: 'allcap'
-        },
-        {
-            name: 'gender',
-            sortField: 'gender',
-            titleClass: 'center aligned',
-            dataClass: 'center aligned',
-            callback: 'genderLabel'
-        },
-        {
-            name: 'salary',
-            sortField: 'salary',
-            titleClass: 'center aligned',
-            dataClass: 'center aligned',
-            callback: 'formatNumber',
-            visible: false
-        },
-        {
-            name: 'address.line1',
-            sortField: 'address.line1',
-            title: 'Address'
-        },
-        // {
-        //   name: '__component:custom-actions',   // append the name of the component you registered with Vue
-        //   title: 'Actions',
-        //   titleClass: 'center aligned',
-        //   dataClass: 'center aligned'
-        // },
-        {
-          name: '__slot:actions',  
-          title: 'Actions',
-          titleClass: 'center aligned',
-          dataClass: 'center aligned'
-        }
-      ],
+      fields: FieldDefs,
       sortOrder: [
           {
               field: 'email',
@@ -152,7 +80,7 @@ export default {
           }
       ],
       moreParams: {
-          
+
       }
     }
   },

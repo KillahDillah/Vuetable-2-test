@@ -1,20 +1,20 @@
 export default [
-    {
-        name: '__handle',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned'
-    },
+    // {
+    //     name: '__handle',
+    //     titleClass: 'center aligned',
+    //     dataClass: 'center aligned'
+    // },
     {
         name: '__sequence',
         title: '#',
         titleClass: 'center aligned',
         dataClass: 'right aligned'
     },
-    {
-        name: '__checkbox',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned'
-    },
+    // {
+    //     name: '__checkbox',
+    //     titleClass: 'center aligned',
+    //     dataClass: 'center aligned'
+    // },
     {
         name: 'name',
         sortField: 'name',
