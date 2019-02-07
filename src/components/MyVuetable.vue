@@ -14,7 +14,8 @@
             api-url="https://vuetable.ratiw.net/api/users"
             :fields="fields"
             pagination-path=""
-            :per-page="30" 
+            :per-page="30"
+            :multi-sort="true"
             @vuetable:pagination-data="onPaginationData"
         ></vuetable>
 
