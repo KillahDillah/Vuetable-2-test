@@ -39,25 +39,36 @@ export default {
   data () {
     return {
       fields: [
-        'name', 'email',
+        {
+            name: 'name',
+            sortField: 'name'
+        },
+        {
+            name: 'email',
+            sortField: 'email'
+        },     
         {
             name: 'birthdate',
+            sortField: 'birthdate',
             titleClass: 'center aligned',
             dataClass: 'center aligned',
             callback: 'formatDate|MM-DD-YYYY'
         },
         {
             name: 'nickname',
+            sortField: 'nickname',
             callback: 'allcap'
         },
         {
             name: 'gender',
+            sortField: 'gender',
             titleClass: 'center aligned',
             dataClass: 'center aligned',
             callback: 'genderLabel'
         },
         {
             name: 'salary',
+            sortField: 'salary',
             titleClass: 'center aligned',
             dataClass: 'center aligned',
             callback: 'formatNumber',
@@ -65,6 +76,7 @@ export default {
         },
         {
             name: 'address.line1',
+            sortField: 'address.line1',
             title: 'Address'
         }
       ]
