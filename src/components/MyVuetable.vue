@@ -6,6 +6,7 @@
             api-url="https://vuetable.ratiw.net/api/users"
             :fields="fields"
             pagination-path=""
+            :per-page="20" 
             @vuetable:pagination-data="onPaginationData"
         ></vuetable>
         <div class="vutable-pagination ui basic segment grid">
@@ -25,7 +26,7 @@
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import accounting from 'accounting'
 import moment from 'moment'
-import VuetablePagination from 'vuetable-2/src/components/VuetablePaginationDropdown'
+import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 
 export default {
