@@ -34,7 +34,7 @@ import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePagination
 import CustomActions from './CustomActions'
 import Vue from 'vue'
 
-Vue.component('custom-actions', CustomActions)
+Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
 
 export default {
   components: {
@@ -64,6 +64,12 @@ export default {
         //   titleClass: 'center aligned',
         //   dataClass: 'center aligned'
         // },
+        {
+          name: '__component:custom-actions',   // append the name of the component you registered with Vue
+          title: 'Actions',
+          titleClass: 'center aligned',
+          dataClass: 'center aligned'
+        },
         {
             name: 'name',
             sortField: 'name'
