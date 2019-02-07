@@ -10,6 +10,7 @@
             @vuetable-pagination:change-page="onChangePage"
             ></vuetable-pagination>
         </div>
+        <filter-bar></filter-bar>
         <vuetable ref="vuetable"
             api-url="https://vuetable.ratiw.net/api/users"
             :fields="fields"
@@ -54,7 +55,9 @@ import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePagination
 import CustomActions from './CustomActions'
 import Vue from 'vue'
 import DetailRow from './DetailRow'
+import FilterBar from './FilterBar'
 
+Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
 
