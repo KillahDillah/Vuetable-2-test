@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div class="m-5 pr-5 pl-5 pb-5">
-      <my-vuetable></my-vuetable>
+      <my-vuetable :table-url="tableUrl"></my-vuetable>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
   name: 'app',  //renders on index page inside id tag
   components: {
     MyVuetable  //include MyVuetable 
+  },
+  data() {
+    return {
+    tableUrl : "https://jsonplaceholder.typicode.com/comments"
+    }
   }
 }
 </script>

@@ -4,14 +4,13 @@
     <div>
         <filter-bar></filter-bar>
         <vuetable ref="vuetable"
-            api-url="https://jsonplaceholder.typicode.com/comments"
+            :api-url="tableUrl"
             :fields="fields"
             pagination-path=""
             data-path=""
-            :per-page="30"
+            :per-page="10"
             :multi-sort="true"
             :sort-order="sortOrder"
-            detail-row-component="my-detail-row"
             :appendParams="moreParams"
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
@@ -52,7 +51,6 @@ import accounting from 'accounting'
 import moment from 'moment'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
-// import CustomActions from './CustomActions'
 import Vue from 'vue'
 import DetailRow from './DetailRow'
 import FilterBar from './FilterBar'
@@ -62,9 +60,9 @@ import FieldDefs from './FieldDefs.js'
 Vue.use(VueEvents)
 Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
-// Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
 
 export default {
+    props: ['tableUrl'],
   components: {
     Vuetable,
     VuetablePagination,
@@ -75,12 +73,13 @@ export default {
       fields: FieldDefs,
       sortOrder: [
           {
-            //   field: 'email',
-            //   sortField: 'email',
+              field: 'email',
+              sortField: 'email',
               direction: 'asc'
           }
       ],
       moreParams: {
+
       }
     }
   },
@@ -92,19 +91,11 @@ export default {
     allcap (value) {
         return value.toUpperCase()
     },
-    // formatNumber(value) {
-    //     return accounting.formatNumber(value, 2)
+    // formatDate(value, fmt = 'M D YYYY') {
+    //     return (value == null)
+    //     ? ''
+    //     : moment(value, 'YYYY-MM-DD').format(fmt)
     // },
-    // genderLabel(value) {
-    //     return value == 'M'
-    //     ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
-    //     : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
-    // },
-    formatDate(value, fmt = 'M D YYYY') {
-        return (value == null)
-        ? ''
-        : moment(value, 'YYYY-MM-DD').format(fmt)
-    },
     onPaginationData (paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
       this.$refs.paginationInfo.setPaginationData(paginationData)

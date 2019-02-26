@@ -4,7 +4,7 @@ export default [
         title: '#',
         titleClass: 'center aligned',
         dataClass: 'right aligned',
-        sortField: 'id'
+        sortField: 'user_id'
     },
     {
         name: 'name',
