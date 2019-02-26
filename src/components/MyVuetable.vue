@@ -4,7 +4,7 @@
     <div>
         <filter-bar></filter-bar>
         <vuetable ref="vuetable"
-            api-url="https://vuetable.ratiw.net/api/users"
+            api-url="https://jsonplaceholder.typicode.com/comments"
             :fields="fields"
             pagination-path=""
             :per-page="30"
@@ -74,13 +74,12 @@ export default {
       fields: FieldDefs,
       sortOrder: [
           {
-              field: 'email',
-              sortField: 'email',
+            //   field: 'email',
+            //   sortField: 'email',
               direction: 'asc'
           }
       ],
       moreParams: {
-
       }
     }
   },

@@ -1,20 +1,11 @@
 export default [
-    // {
-    //     name: '__handle',
-    //     titleClass: 'center aligned',
-    //     dataClass: 'center aligned'
-    // },
     {
-        name: '__sequence',
+        name: 'id',
         title: '#',
         titleClass: 'center aligned',
-        dataClass: 'right aligned'
+        dataClass: 'right aligned',
+        sortField: 'id'
     },
-    // {
-    //     name: '__checkbox',
-    //     titleClass: 'center aligned',
-    //     dataClass: 'center aligned'
-    // },
     {
         name: 'name',
         sortField: 'name',
@@ -24,35 +15,17 @@ export default [
         sortField: 'email'
     },
     {
-        name: 'birthdate',
-        sortField: 'birthdate',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned',
-        callback: 'formatDate|DD-MM-YYYY'
-    },
-    {
-        name: 'nickname',
-        sortField: 'nickname',
-        callback: 'allcap'
-    },
-    {
-        name: 'gender',
-        sortField: 'gender',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned',
-        callback: 'genderLabel'
-    },
-    {
-        name: 'salary',
-        sortField: 'salary',
+        name: 'body',
+        title: 'Description',
+        sortField: 'body',
         titleClass: 'center aligned',
         dataClass: 'right aligned',
         callback: 'formatNumber'
     },
-    {
-        name: '__slot:actions',
-        title: 'Slot Actions',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned',
-    }
+    // {
+    //     name: '__slot:actions',
+    //     title: 'Slot Actions',
+    //     titleClass: 'center aligned',
+    //     dataClass: 'center aligned',
+    // }
 ]
