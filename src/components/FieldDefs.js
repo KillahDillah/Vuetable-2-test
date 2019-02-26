@@ -16,16 +16,8 @@ export default [
     },
     {
         name: 'body',
-        title: 'Description',
         sortField: 'body',
         titleClass: 'center aligned',
-        dataClass: 'right aligned',
-        callback: 'formatNumber'
-    },
-    // {
-    //     name: '__slot:actions',
-    //     title: 'Slot Actions',
-    //     titleClass: 'center aligned',
-    //     dataClass: 'center aligned',
-    // }
+        dataClass: 'left aligned text-wrap',
+    }
 ]
