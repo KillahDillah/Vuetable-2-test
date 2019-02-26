@@ -7,6 +7,7 @@
             api-url="https://jsonplaceholder.typicode.com/comments"
             :fields="fields"
             pagination-path=""
+            data-path=""
             :per-page="30"
             :multi-sort="true"
             :sort-order="sortOrder"
@@ -15,7 +16,7 @@
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
         >
-            <template slot="actions" slot-scope="props"> 
+            <!-- <template slot="actions" slot-scope="props"> 
                 <div class="custom-actions">
                     <button class="ui basic button"
                     @click="onAction('view-item', props.rowData, props.rowIndex)">
@@ -30,7 +31,7 @@
                     <i class="delete icon"></i>
                     </button>
                 </div>
-            </template>
+            </template> -->
         </vuetable>
         <div class="vutable-pagination ui basic segment grid">
             <vuetable-pagination-info ref="paginationInfo"
@@ -51,7 +52,7 @@ import accounting from 'accounting'
 import moment from 'moment'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
-import CustomActions from './CustomActions'
+// import CustomActions from './CustomActions'
 import Vue from 'vue'
 import DetailRow from './DetailRow'
 import FilterBar from './FilterBar'
@@ -61,7 +62,7 @@ import FieldDefs from './FieldDefs.js'
 Vue.use(VueEvents)
 Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
-Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
+// Vue.component('custom-actions', CustomActions) //registers component to be used in vuetable
 
 export default {
   components: {
@@ -91,14 +92,14 @@ export default {
     allcap (value) {
         return value.toUpperCase()
     },
-    formatNumber(value) {
-        return accounting.formatNumber(value, 2)
-    },
-    genderLabel(value) {
-        return value == 'M'
-        ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
-        : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
-    },
+    // formatNumber(value) {
+    //     return accounting.formatNumber(value, 2)
+    // },
+    // genderLabel(value) {
+    //     return value == 'M'
+    //     ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
+    //     : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
+    // },
     formatDate(value, fmt = 'M D YYYY') {
         return (value == null)
         ? ''
@@ -111,9 +112,9 @@ export default {
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
     },
-    onAction (action, data, index) {
-        console.log('slot) action: ' + action, data.name, index)
-    },
+    // onAction (action, data, index) {
+    //     console.log('slot) action: ' + action, data.name, index)
+    // },
     onCellClicked (data, field, event) {
         console.log('cellClicked: ', field.name)
         this.$refs.vuetable.toggleDetailRow(data.id)
