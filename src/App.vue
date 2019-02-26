@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-    tableUrl : "https://jsonplaceholder.typicode.com/comments"
+    tableUrl : "https://jsonplaceholder.typicode.com/comments",
     }
   }
 }

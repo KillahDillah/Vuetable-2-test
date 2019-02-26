@@ -47,7 +47,6 @@
 
 <script>
 import Vuetable from 'vuetable-2/src/components/Vuetable'
-import accounting from 'accounting'
 import moment from 'moment'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
