@@ -51,7 +51,7 @@ export default {
     return {
       fields: [ //demonstrate the different ways to define fields
         { name:'id', title:'ID', titleClass: 'center aligned', dataClass: 'center aligned', sortField: 'id'}, 
-        { name:'name', sortField: 'name'}, 
+        { name:'name', title: '<i class="fas fa-user"></i> Full Name', sortField: 'name'}, 
         { name: 'email', sortField: 'email'},     
         { name: 'birthdate', sortField: 'birthdate', titleClass: 'center aligned', dataClass: 'center aligned', callback: 'formatDate|MM-DD-YYYY' },  
         'nickname'
@@ -76,7 +76,7 @@ export default {
         },
         pagination: {
           infoClass: 'pull-left',
-          wrapperClass: 'vuetable-pagination pull-right',
+          // wrapperClass: 'vuetable-pagination pull-right',
           activeClass: 'btn-primary',
           disabledClass: 'disabled',
           pageClass: 'btn btn-border',
@@ -135,5 +135,8 @@ export default {
 <style>
 td {
     white-space: nowrap;
+}
+.fas .fa-user {
+  color: orange;
 }
 </style>
