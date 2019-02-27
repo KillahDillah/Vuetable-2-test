@@ -2,18 +2,20 @@
 
 <template>
     <div>
+      <button type="button" @click:test-fun="testFun">HEY</button>
         <filter-bar></filter-bar>
         <vuetable ref="vuetable"
             api-url= "https://vuetable.ratiw.net/api/users"
-            :fields="fields"
+            :fields="fields" 
             pagination-path=""
-            data-path=""
+            data-path="data"
             :per-page="10"
             :multi-sort="true"
             :sort-order="sortOrder"
             :appendParams="moreParams"
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
+            @vuetable:loaded="testFun"
         >
         </vuetable>
         <div class="vutable-pagination ui basic segment grid">
@@ -34,14 +36,15 @@ import Vue from 'vue'
 import DetailRow from './DetailRow'
 import FilterBar from './FilterBar'
 import VueEvents from 'vue-events'
-import FieldDefs from './FieldDefs.js'
+import FieldDefs from './FieldDefs.js' //define fields within table
 
 Vue.use(VueEvents)
 Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 
 export default {
-    // props: ['tableUrl'],
+    // props: ['tableUrl'], bring in API set in APP.vue
+    props: ['testFun'],
   components: {
     Vuetable,
     VuetablePagination,
@@ -49,7 +52,8 @@ export default {
   },
   data () {
     return {
-      fields: FieldDefs,
+      // fields: FieldDefs, set dynamically using FieldDefs.js
+      fields: ['col 1', 'col 2', 'col 3', {name: 'col 4', sortField: 'name'}],
       sortOrder: [
           {
               field: 'email',
@@ -65,16 +69,12 @@ export default {
   mounted() {
     this.$events.$on('filter-set', eventData => this.onFilterSet(eventData))
     this.$events.$on('filter-reset', e => this.onFilterReset())
+    console.log('function', this.testFun)
   },
   methods: {
     allcap (value) {
         return value.toUpperCase()
     },
-    // formatDate(value, fmt = 'M D YYYY') {
-    //     return (value == null)
-    //     ? ''
-    //     : moment(value, 'YYYY-MM-DD').format(fmt)
-    // },
     onPaginationData (paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
       this.$refs.paginationInfo.setPaginationData(paginationData)

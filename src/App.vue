@@ -2,8 +2,8 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div class="m-5 pr-5 pl-5 pb-5">
-      <vuetable-one></vuetable-one>
-      <!-- <comments :table-url="tableUrl"></comments> -->
+      <vuetable-one :test-fun='testFun'></vuetable-one>
+      <!-- <vuetable-one :table-url="tableUrl"></vuetable-one>  example : set API call with props--> 
       <vuetable-two></vuetable-two>
     </div>
   </div>
@@ -19,9 +19,14 @@ export default {
     VuetableOne,  //include VuetableOne 
     VuetableTwo  //include VuetableTwo 
   },
+  methods: {
+    testFun(){
+      console.log ("I'm a function from APP")
+    }
+  },
   data() {
     return {
-    // tableUrl : "https://jsonplaceholder.typicode.com/comments",
+    // tableUrl : "https://jsonplaceholder.typicode.com/comments", // API call set globally for all tables to have same API
     }
   }
 }
