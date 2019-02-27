@@ -2,22 +2,26 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div class="m-5 pr-5 pl-5 pb-5">
-      <my-vuetable :table-url="tableUrl"></my-vuetable>
+      <vuetable-one></vuetable-one>
+      <!-- <comments :table-url="tableUrl"></comments> -->
+      <vuetable-two></vuetable-two>
     </div>
   </div>
 </template>
 
 <script>
-import MyVuetable from './components/MyVuetable'
+import VuetableOne from './components/VuetableOne'
+import VuetableTwo from './components/VuetableTwo'
 
 export default {
   name: 'app',  //renders on index page inside id tag
   components: {
-    MyVuetable  //include MyVuetable 
+    VuetableOne,  //include VuetableOne 
+    VuetableTwo  //include VuetableTwo 
   },
   data() {
     return {
-    tableUrl : "https://jsonplaceholder.typicode.com/comments",
+    // tableUrl : "https://jsonplaceholder.typicode.com/comments",
     }
   }
 }
