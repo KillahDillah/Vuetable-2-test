@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#app',  //renders on index page inside id tag
   components: { App },
   template: '<App/>'
 })

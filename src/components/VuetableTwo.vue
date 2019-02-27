@@ -41,7 +41,7 @@ Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 
 export default {
-    // props: ['tableUrl'],
+  props: ['css'],
   components: {
     Vuetable,
     VuetablePagination,
@@ -66,29 +66,29 @@ export default {
       moreParams: {
 
       },
-      css: {
-        table: {
-          tableClass: 'table table-striped table-bordered table-hovered',
-          loadingClass: 'loading',
-          ascendingIcon: 'glyphicon glyphicon-chevron-up',
-          descendingIcon: 'glyphicon glyphicon-chevron-down',
-          handleIcon: 'glyphicon glyphicon-menu-hamburger',
-        },
-        pagination: {
-          infoClass: 'pull-left',
-          // wrapperClass: 'vuetable-pagination pull-right',
-          activeClass: 'btn-primary',
-          disabledClass: 'disabled',
-          pageClass: 'btn btn-border',
-          linkClass: 'btn btn-border',
-          icons: {
-            first: '',
-            prev: '',
-            next: '',
-            last: '',
-          },
-        }
-      }
+      // css: {
+      //   table: {
+      //     tableClass: 'table table-striped table-bordered table-hovered',
+      //     loadingClass: 'loading',
+      //     ascendingIcon: 'glyphicon glyphicon-chevron-up',
+      //     descendingIcon: 'glyphicon glyphicon-chevron-down',
+      //     handleIcon: 'glyphicon glyphicon-menu-hamburger',
+      //   },
+      //   pagination: {
+      //     infoClass: 'pull-left',
+      //     // wrapperClass: 'vuetable-pagination pull-right',
+      //     activeClass: 'btn-primary',
+      //     disabledClass: 'disabled',
+      //     pageClass: 'btn btn-border',
+      //     linkClass: 'btn btn-border',
+      //     icons: {
+      //       first: '',
+      //       prev: '',
+      //       next: '',
+      //       last: '',
+      //     },
+      //   }
+      // }
     }
   },
   mounted() {
@@ -136,7 +136,7 @@ export default {
 td {
     white-space: nowrap;
 }
-.fas .fa-user {
+.fa-user {
   color: orange;
 }
 </style>

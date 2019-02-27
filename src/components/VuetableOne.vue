@@ -6,6 +6,7 @@
         <vuetable ref="vuetable"
             api-url= "https://vuetable.ratiw.net/api/users"
             :fields="fields" 
+            :css="css.table"
             pagination-path=""
             data-path="data"
             :per-page="10"
@@ -15,11 +16,12 @@
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
             @vuetable:loaded="testFun"
+            @vuetable:loading="onLoading"
         >
         </vuetable>
         <div class="vutable-pagination ui basic segment grid">
           <vuetable-pagination-info ref="paginationInfo"></vuetable-pagination-info>
-          <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
+          <vuetable-pagination :css="css.pagination" ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         </div>
     </div>
 </template>
@@ -43,7 +45,7 @@ Vue.component('my-detail-row', DetailRow)
 
 export default {
     // props: ['tableUrl'], bring in API set in APP.vue
-    props: ['testFun'],
+    props: ['testFun', 'css'],
   components: {
     Vuetable,
     VuetablePagination,
@@ -68,7 +70,6 @@ export default {
   mounted() {
     this.$events.$on('filter-set', eventData => this.onFilterSet(eventData))
     this.$events.$on('filter-reset', e => this.onFilterReset())
-    console.log('function', this.testFun)
   },
   methods: {
     allcap (value) {
@@ -97,7 +98,10 @@ export default {
     onFilterReset () {
         this.moreParams = {}
         Vue.nextTick( () => this.$refs.vuetable.refresh())
-    }
+    },
+    onLoading() {
+      console.log('loading... show your spinner here')
+    },
   }
 }
 </script>

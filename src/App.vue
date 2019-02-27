@@ -2,9 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div class="m-5 pr-5 pl-5 pb-5">
-      <vuetable-one :test-fun='testFun'></vuetable-one>
+      <vuetable-one :test-fun='testFun' :css='css'></vuetable-one>
       <!-- <vuetable-one :table-url="tableUrl"></vuetable-one>  example : set API call with props--> 
-      <vuetable-two></vuetable-two>
+      <vuetable-two :css='css'></vuetable-two>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import VuetableOne from './components/VuetableOne'
 import VuetableTwo from './components/VuetableTwo'
 
 export default {
-  name: 'app',  //renders on index page inside id tag
+  name: 'app',  //name of app
   components: {
     VuetableOne,  //include VuetableOne 
     VuetableTwo  //include VuetableTwo 
@@ -27,6 +27,29 @@ export default {
   data() {
     return {
     // tableUrl : "https://jsonplaceholder.typicode.com/comments", // API call set globally for all tables to have same API
+      css: {
+        table: {
+          tableClass: 'table table-striped table-bordered table-hovered',
+          loadingClass: 'loading',
+          ascendingIcon: 'glyphicon glyphicon-chevron-up',
+          descendingIcon: 'glyphicon glyphicon-chevron-down',
+          handleIcon: 'glyphicon glyphicon-menu-hamburger',
+        },
+        pagination: {
+          infoClass: 'pull-left',
+          // wrapperClass: 'vuetable-pagination pull-right',
+          activeClass: 'btn-primary',
+          disabledClass: 'disabled',
+          pageClass: 'btn btn-border',
+          linkClass: 'btn btn-border',
+          icons: {
+            first: '',
+            prev: '',
+            next: '',
+            last: '',
+          },
+        }
+      }
     }
   }
 }
