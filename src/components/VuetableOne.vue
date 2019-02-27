@@ -2,7 +2,6 @@
 
 <template>
     <div>
-      <button type="button" @click:test-fun="testFun">HEY</button>
         <filter-bar></filter-bar>
         <vuetable ref="vuetable"
             api-url= "https://vuetable.ratiw.net/api/users"
