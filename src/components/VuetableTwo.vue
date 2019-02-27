@@ -6,6 +6,7 @@
         <vuetable ref="vuetable"
             api-url= "https://vuetable.ratiw.net/api/users"
             :fields="fields"
+            :css="css.table"
             pagination-path=""
             data-path="data"
             :per-page="10"
@@ -18,7 +19,7 @@
         </vuetable>
         <div class="vutable-pagination ui basic segment grid">
           <vuetable-pagination-info ref="paginationInfo"></vuetable-pagination-info>
-          <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
+          <vuetable-pagination :css="css.pagination" ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         </div>
     </div>
 </template>
@@ -64,6 +65,29 @@ export default {
       ],
       moreParams: {
 
+      },
+      css: {
+        table: {
+          tableClass: 'table table-striped table-bordered table-hovered',
+          loadingClass: 'loading',
+          ascendingIcon: 'glyphicon glyphicon-chevron-up',
+          descendingIcon: 'glyphicon glyphicon-chevron-down',
+          handleIcon: 'glyphicon glyphicon-menu-hamburger',
+        },
+        pagination: {
+          infoClass: 'pull-left',
+          wrapperClass: 'vuetable-pagination pull-right',
+          activeClass: 'btn-primary',
+          disabledClass: 'disabled',
+          pageClass: 'btn btn-border',
+          linkClass: 'btn btn-border',
+          icons: {
+            first: '',
+            prev: '',
+            next: '',
+            last: '',
+          },
+        }
       }
     }
   },
