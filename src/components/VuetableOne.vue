@@ -53,12 +53,11 @@ export default {
   },
   data () {
     return {
-      // fields: FieldDefs, set dynamically using FieldDefs.js
-      fields: ['col 1', 'col 2', 'col 3', {name: 'col 4', sortField: 'name'}],
+      fields: FieldDefs, //set dynamically using FieldDefs.js
       sortOrder: [
           {
-              field: 'email',
-              sortField: 'email',
+              field: 'id',
+              sortField: 'id',
               direction: 'asc'
           }
       ],

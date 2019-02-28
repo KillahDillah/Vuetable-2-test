@@ -1,30 +1,27 @@
 export default [
     {
         name: 'id',
-        title: '#',
+        title: 'ID',
         titleClass: 'center aligned',
         dataClass: 'right aligned',
-        sortField: 'user_id'
+        sortField: 'id'
     },
     {
-        name: 'name',
-        sortField: 'name',
+        name: 'address.line2',
+        title: 'Name',
+        titleClass: 'center aligned',
+        dataClass: 'right aligned',
     },
     {
-        name: 'email',
-        sortField: 'email'
-    },
-    {
-        name: 'body',
-        sortField: 'body',
+        name: 'gender',
+        sortField: 'gender',
         titleClass: 'center aligned',
         dataClass: 'left aligned text-wrap',
     },
     {
-        name: 'thumbnailUrl',
-        title: 'Image',
-        sortField: 'albumId',
+        name: 'salary',
+        sortField: 'salary',
         titleClass: 'center aligned',
         dataClass: 'left aligned text-wrap',
-    }
+    },
 ]

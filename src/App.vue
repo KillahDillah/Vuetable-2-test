@@ -4,7 +4,7 @@
     <div class="m-5 pr-5 pl-5 pb-5">
       <vuetable-one :test-fun='testFun' :css='css'></vuetable-one>
       <!-- <vuetable-one :table-url="tableUrl"></vuetable-one>  example : set API call with props--> 
-      <vuetable-two :css='css'></vuetable-two>
+      <vuetable-two :test-fun='testFun' :css='css'></vuetable-two>
     </div>
   </div>
 </template>

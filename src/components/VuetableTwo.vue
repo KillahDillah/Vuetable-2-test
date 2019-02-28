@@ -15,6 +15,7 @@
             :appendParams="moreParams"
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
+            @vuetable:loaded="testFun"
         >
         </vuetable>
         <div class="vutable-pagination ui basic segment grid">
@@ -41,7 +42,7 @@ Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 
 export default {
-  props: ['css'],
+  props: ['css', 'testFun'],
   components: {
     Vuetable,
     VuetablePagination,
